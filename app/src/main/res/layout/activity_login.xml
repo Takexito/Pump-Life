@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".RegActivity">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@id/logo"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="360dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
+        android:drawableLeft="@android:drawable/screen_background_dark"
+        android:drawableEnd="@android:drawable/screen_background_dark"
+        android:ellipsize="end"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <EditText
+        android:id="@+id/repeat_pass"
+        android:layout_width="360dp"
+        android:layout_height="64dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:hint="Повторите пароль"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pass" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="185dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ellipse" />
+
+    <EditText
+        android:id="@+id/edit_pass"
+        android:layout_width="360dp"
+        android:layout_height="64dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:hint="Пароль"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_email" />
+
+    <ImageButton
+        android:id="@+id/delete_email_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_email"
+        app:layout_constraintStart_toEndOf="@+id/edit_email"
+        app:layout_constraintTop_toTopOf="@+id/edit_email"
+        app:layout_constraintVertical_bias="0.48000002"
+        app:srcCompat="@drawable/delete_text_button" />
+
+    <ImageButton
+        android:id="@+id/delete_password_button_1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_pass"
+        app:layout_constraintStart_toEndOf="@+id/edit_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_pass"
+        app:srcCompat="@drawable/delete_text_button" />
+
+    <ImageButton
+        android:id="@+id/delete_password_button_2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/repeat_pass"
+        app:layout_constraintStart_toEndOf="@+id/repeat_pass"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pass"
+        app:srcCompat="@drawable/delete_text_button" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="или"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repeat_pass" />
+
+    <ImageButton
+        android:id="@+id/vk_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/google_signin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.336"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/vk_button" />
+
+    <ImageButton
+        android:id="@+id/google_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/google_button" />
+
+    <ImageButton
+        android:id="@+id/reg_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/google_signin"
+        app:srcCompat="@drawable/reg_button" />
+
+    <ImageButton
+        android:id="@+id/signin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_button"
+        app:srcCompat="@drawable/signin_button" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="32dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
