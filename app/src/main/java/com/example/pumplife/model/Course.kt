@@ -3,6 +3,7 @@ package com.example.pumplife.model
 import android.media.Image
 
 class Course (
+    val id: Int,
     val title: String,
     val description: String,
     val image: Image,
@@ -31,4 +32,16 @@ class Course (
         return (completedCardNum.toFloat()/currentCardNum.toFloat()).toInt() * 100
     }
 
+}
+
+class CourseLab(){
+    val courseList: MutableList<Course>
+
+    init {
+        courseList = mutableListOf()
+        for (i in 0..10) {
+            //val course = Course(i,"Title", "Description", )
+           // courseList.add(course)
+        }
+    }
 }
