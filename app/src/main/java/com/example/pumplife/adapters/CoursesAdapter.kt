@@ -1,4 +1,4 @@
-package com.example.pumplife.ui.home
+package com.example.pumplife.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.model.Course
-//import com.example.pumplife.model.CourseLab
 
 class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView.Adapter<CoursesAdapter.CoursesHolder>() {
 
@@ -21,13 +20,11 @@ class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView
 
     override fun onBindViewHolder(holder: CoursesHolder, position: Int) {
         val course = courseList[position]
-        holder.idTextureView.setText(course.id)
         holder.titleTextView.text = course.title
     }
 
     inner class CoursesHolder(view: View): RecyclerView.ViewHolder(view) {
 
-        val idTextureView =  itemView.findViewById<TextView>(R.id.id_text_view)
         val titleTextView = itemView.findViewById<TextView>(R.id.course_name)
 
     }

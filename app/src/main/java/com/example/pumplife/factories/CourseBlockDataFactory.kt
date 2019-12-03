@@ -1,4 +1,6 @@
-package com.example.pumplife.model
+package com.example.pumplife.factories
+
+import com.example.pumplife.model.CourseBlock
 
 object CourseBlockDataFactory {
 
@@ -6,7 +8,7 @@ object CourseBlockDataFactory {
         val courseBlockList = mutableListOf<CourseBlock>()
         val courseList = CourseDataFactory.getCourse()
         for (i in 0..10) {
-            val CourseBlock = CourseBlock(i ,"Title $i", courseList)
+            val CourseBlock = CourseBlock(i, "Title $i", courseList)
             courseBlockList.add(CourseBlock)
         }
         return courseBlockList

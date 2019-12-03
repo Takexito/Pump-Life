@@ -31,15 +31,3 @@ class Course (
      } */
 
  }
-
- /*class CourseLab(){
-     val courseList: MutableList<Course>
-
-     init {
-         courseList = mutableListOf()
-         for (i in 0..10) {
-             val course = Course(i,"Title $i")
-             courseList.add(course)
-         }
-     }
- } */

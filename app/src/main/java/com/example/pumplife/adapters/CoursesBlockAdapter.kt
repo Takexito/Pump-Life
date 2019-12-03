@@ -1,23 +1,19 @@
-package com.example.pumplife.ui.home
+package com.example.pumplife.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.ListView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
-import com.example.pumplife.model.Course
 import com.example.pumplife.model.CourseBlock
 
-//import com.example.pumplife.model.CourseBlockLab
+
 
 class CoursesBlockAdapter(private val courseBlockList : MutableList<CourseBlock>): RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {
 
-    //private val viewPool = RecyclerView.RecycledViewPool()
+    private val viewPool = RecyclerView.RecycledViewPool()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoursesBlockHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.course_block_item, parent, false)
@@ -29,11 +25,12 @@ class CoursesBlockAdapter(private val courseBlockList : MutableList<CourseBlock>
     override fun onBindViewHolder(holder: CoursesBlockHolder, position: Int) {
         val courseBlock = courseBlockList[position]
         holder.courseBlockTitleTextView.text = courseBlock.title
-       /* holder.courseView.apply {
-            layoutManager = LinearLayoutManager(holder.courseView.context, RecyclerView.HORIZONTAL, false)
+        holder.courseView.apply {
+            layoutManager =
+                LinearLayoutManager(holder.courseView.context, RecyclerView.HORIZONTAL, false)
             adapter = CoursesAdapter(courseBlock.courseList)
-            //recycledViewPool = viewPool
-        } */
+            setRecycledViewPool(viewPool)
+        }
     }
 
     inner class CoursesBlockHolder(view: View): RecyclerView.ViewHolder(view) {
