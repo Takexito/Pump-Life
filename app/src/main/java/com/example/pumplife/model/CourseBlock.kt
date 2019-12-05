@@ -2,6 +2,6 @@ package com.example.pumplife.model
 
 class CourseBlock(
     val id: Int,
-    val title: String,
+    val theme: Themes,
     val courseList: MutableList<Course>
 )
