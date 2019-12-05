@@ -25,7 +25,7 @@ class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView
         val course = courseList[position]
         holder.titleTextView.text = course.title
         holder.itemView.setOnClickListener{
-            DataBase.sendToDb(course)
+            //DataBase.sendToDb(course)
         }
 
     }
@@ -34,3 +34,4 @@ class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView
         val titleTextView = itemView.findViewById<TextView>(R.id.course_name)
     }
 }
+

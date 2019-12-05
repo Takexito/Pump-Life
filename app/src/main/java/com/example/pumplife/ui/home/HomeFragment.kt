@@ -44,7 +44,8 @@ class HomeFragment : Fragment() {
     fun createAdapter(){
         coursesBlockRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
-            adapter = CoursesBlockAdapter(arrayListOf(CourseBlock(0, Themes.FINANCE, DataBase.data)))
+            adapter = //CoursesBlockAdapter(arrayListOf(CourseBlock(0, Themes.FINANCE, DataBase.data)))
+            CoursesBlockAdapter(DataBase.data)
         }
     }
 }
