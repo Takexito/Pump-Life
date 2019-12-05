@@ -9,16 +9,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="36dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/user_avatar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/user_avatar" />
 
@@ -36,7 +36,7 @@
         android:id="@+id/change_avatar_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/button_bg"
         android:text="Сменить аватар"
         android:textColor="#FFFEFE"
@@ -46,7 +46,7 @@
         android:id="@+id/change_password_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/button_bg"
         android:text="Сменить пароль"
         android:textColor="#FFFEFE"
@@ -56,8 +56,7 @@
         android:id="@+id/change_user_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/button_bg"
         android:text="Выйти"
         android:textColor="#FFFEFE"
