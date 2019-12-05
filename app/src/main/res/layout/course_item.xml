@@ -1,30 +1,35 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
     <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/course_card_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="-10dp"
-        android:background="@drawable/ic_course_bg">
+        android:layout_width="300dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="13dp"
+        android:background="@drawable/ic_course_bg"
+        card_view:cardBackgroundColor="#EDB3B3B3"
+        card_view:cardCornerRadius="18dp">
 
-        <TextView
-            android:id="@+id/course_name"
-            android:layout_width="348dp"
-            android:layout_height="220dp"
-            android:background="@drawable/ic_course_bg"
-            android:gravity="center"
-            android:text="Title"
-            android:textColor="#000000"
-            android:textSize="24sp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/course_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Title"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
-</LinearLayout>
 
 
 
