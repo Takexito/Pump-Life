@@ -26,14 +26,20 @@ class SignInActivity : AppCompatActivity() {
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                intent.flags = Intent.FLAG_ACTIVITY_NO_HISTORY
             } else Toast.makeText(this, "Введите почту и пароль", Toast.LENGTH_LONG).show()
         }
 
         stop_button.setOnClickListener{
-
-            //Выход из программы
-
+            //Выход из Activity
             finish()
+        }
+
+        delete_email_button.setOnClickListener{
+            edit_email.text = null
+        }
+        delete_password_button.setOnClickListener{
+            edit_pass.text = null
         }
     }
 
