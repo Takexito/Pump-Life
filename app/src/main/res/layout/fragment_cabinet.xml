@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/ic_button_bg"
         android:text="Сменить аватар"
         android:textColor="#FFFEFE"
         android:textSize="24sp" />
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/ic_button_bg"
         android:text="Сменить пароль"
         android:textColor="#FFFEFE"
         android:textSize="24sp" />
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/ic_button_bg"
         android:text="Выйти"
         android:textColor="#FFFEFE"
         android:textSize="24sp" />
