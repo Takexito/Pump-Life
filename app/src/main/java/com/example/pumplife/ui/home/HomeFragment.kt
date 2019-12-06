@@ -21,7 +21,6 @@ class HomeFragment : Fragment() {
 
      lateinit var coursesBlockRecyclerView: RecyclerView
      lateinit var coursesCardView: CardView
-     lateinit var button: Button
 
 
     override fun onCreateView(
@@ -34,7 +33,6 @@ class HomeFragment : Fragment() {
 
         coursesBlockRecyclerView = root.findViewById(R.id.recyclerView_course_block)
         coursesCardView = view.findViewById(R.id.course_card_view)
-        button = root.findViewById(R.id.button)
 
         setRecyclerViews()
         setOnClickListeners()
@@ -53,12 +51,6 @@ class HomeFragment : Fragment() {
     }
 
     fun setOnClickListeners() {
-        button.setOnClickListener{
-            CourseInfoFragment().show(fragmentManager!!,"CourseInfoFragment")
-        }
 
-        coursesCardView.setOnClickListener{
-            CourseInfoFragment().show(fragmentManager!!,"CourseInfoFragment")
-        }
     }
 }

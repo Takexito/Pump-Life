@@ -22,4 +22,12 @@ class InfoPagerAdapter(manager: FragmentManager): FragmentPagerAdapter(manager, 
            else -> {ThemeListFragment()}
         }
     }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+
+        return when (position) {
+            0 -> "О курсе"
+            else -> "Модули"
+        }
+    }
 }
