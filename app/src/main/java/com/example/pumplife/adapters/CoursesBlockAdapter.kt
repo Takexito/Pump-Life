@@ -4,13 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
-import com.example.pumplife.controller.DataBase
 import com.example.pumplife.model.CourseBlock
-import com.google.firebase.database.FirebaseDatabase
 
 
 class CoursesBlockAdapter(private val courseBlockList : ArrayList<CourseBlock>): RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {

@@ -2,13 +2,12 @@ package com.example.pumplife.controller
 
 import android.util.Log
 import androidx.fragment.app.Fragment
-import com.example.pumplife.model.Course
 import com.example.pumplife.model.CourseBlock
 import com.example.pumplife.ui.home.HomeFragment
 import com.google.firebase.database.*
 
 
-object DataBase {
+object CoursesDB {
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("Courses").child("-LvMPd1JOBCekMNr9xto")
     var data = arrayListOf<CourseBlock>()
@@ -22,14 +21,12 @@ object DataBase {
                 val genericTypeIndicator: GenericTypeIndicator<ArrayList<CourseBlock>> =
                     object :
                         GenericTypeIndicator<ArrayList<CourseBlock>>() {}
-                val map =
-                    dataSnapshot.getValue(genericTypeIndicator)
-                //val myList = arrayListOf<ArrayList<Course>>()
-                //val list = map!!.values.toList()
-                data = map!!//ArrayList(list)
-                Log.d("database", "msg: ")
-                if(isFirst)(adapter as HomeFragment).createAdapter()
-                else (adapter as HomeFragment).updateAdapter()
+                data = dataSnapshot.getValue(genericTypeIndicator)!!
+
+                if (isFirst)
+                    (adapter as HomeFragment).createAdapter()
+                else
+                    (adapter as HomeFragment).updateAdapter()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -39,7 +36,6 @@ object DataBase {
             }
         }
         myRef.addValueEventListener(postListener)
-
     }
 
     fun sendToDb(message: Any) {

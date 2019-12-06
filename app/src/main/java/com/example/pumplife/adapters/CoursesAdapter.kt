@@ -1,13 +1,11 @@
 package com.example.pumplife.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
-import com.example.pumplife.controller.DataBase
 import com.example.pumplife.model.Course
 
 class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView.Adapter<CoursesAdapter.CoursesHolder>() {

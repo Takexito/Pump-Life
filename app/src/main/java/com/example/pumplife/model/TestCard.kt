@@ -6,11 +6,7 @@ class TestCard(
     var isComplete: Boolean = false,
     var currQuestion: Int = 0,
     var correctAnswerNum: Int = 0
-) {
-    fun isTestCard(): Boolean {
-        return true
-    }
-
+): Card() {
     fun nextQuestion(): Question? {
         if (currQuestion >= questionsList.size - 1) return null
         return questionsList[currQuestion++]
