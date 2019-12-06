@@ -15,24 +15,14 @@ import kotlinx.android.synthetic.main.fragment_course_info.*
 
 class CourseDescriptionFragment: Fragment() {
 
-    lateinit var themeRecyclerView: RecyclerView
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_course_description, container, false)
-
-        themeRecyclerView = view.findViewById(R.id.theme_recycler_view)
-
-        themeRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
-            adapter =
-                ThemesAdapter(CourseThemeDataFactory.getThemes())
-        }
         return  view
     }
+
 }
 
