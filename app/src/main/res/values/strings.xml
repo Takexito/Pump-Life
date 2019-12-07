@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Pump Life</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">КУРСЫ</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_cabinet">Cabinet</string>
+    <string name="title_cabinet">Кабинет</string>
+
 </resources>

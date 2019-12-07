@@ -4,28 +4,45 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
+import com.example.pumplife.adapters.CoursesBlockAdapter
+import com.example.pumplife.controller.CoursesDB
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+     lateinit var coursesBlockRecyclerView: RecyclerView
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
+        coursesBlockRecyclerView = root.findViewById(R.id.recyclerView_course_block)
+        //CoursesBlockAdapter(CourseBlockDataFactory.getCourseBlock() as ArrayList<CourseBlock>)
+        CoursesDB.init(this)
+
+
         return root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+    }
+
+    fun updateAdapter(){
+        coursesBlockRecyclerView.adapter!!.notifyDataSetChanged()
+    }
+    fun createAdapter(){
+        coursesBlockRecyclerView.apply {
+            layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+            adapter = //CoursesBlockAdapter(arrayListOf(CourseBlock(0, Themes.FINANCE, DataBase.data)))
+            CoursesBlockAdapter(CoursesDB.data)
+        }
     }
 }
