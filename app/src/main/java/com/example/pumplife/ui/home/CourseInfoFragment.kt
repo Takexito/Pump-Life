@@ -37,7 +37,7 @@ class CourseInfoFragment: Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val infoPagerAdapter = InfoPagerAdapter(getChildFragmentManager())
+        val infoPagerAdapter = InfoPagerAdapter(childFragmentManager)
         viewpager.adapter = infoPagerAdapter
         tabLayout.setupWithViewPager(viewpager)
         val text = CourseManager.currCourse.title
