@@ -33,7 +33,7 @@ class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView
         holder.titleTextView.text = course.title
         holder.itemView.setOnClickListener{
             //DataBase.sendToDb(course)
-            (contexxt as MainActivity).navController.navigate(R.id.action_navigation_home_to_courseDescriptionFragment)
+            (contexxt as MainActivity).navController.navigate(R.id.courseDescriptionFragment)
            //CourseInfoFragment().show(supportFragmentManager,"CourseInfoFragment")
             //fm.beginTransaction().replace(R.id.nav_host_fragment, CourseInfoFragment()).commit()
 
@@ -41,7 +41,6 @@ class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView
     }
 
 
-    }
 
     inner class CoursesHolder(view: View): RecyclerView.ViewHolder(view){
         val titleTextView = itemView.findViewById<TextView>(R.id.course_name)

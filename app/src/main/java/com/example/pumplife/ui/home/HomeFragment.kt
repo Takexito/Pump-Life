@@ -45,7 +45,6 @@ class HomeFragment : Fragment() {
     }
 
     fun setRecyclerViews(){
-        coursesBlockRecyclerView = root.findViewById(R.id.recyclerView_course_block)
         //CoursesBlockAdapter(CourseBlockDataFactory.getCourseBlock() as ArrayList<CourseBlock>)
         CoursesDB.init(this)
 

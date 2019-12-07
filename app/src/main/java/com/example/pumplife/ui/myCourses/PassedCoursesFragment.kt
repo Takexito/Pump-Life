@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.adapters.CoursesBlockAdapter
 import com.example.pumplife.factories.CourseBlockDataFactory
+import com.example.pumplife.model.CourseBlock
 
 class PassedCoursesFragment: Fragment() {
 
@@ -35,7 +36,7 @@ class PassedCoursesFragment: Fragment() {
         passedCoursesBlockRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
             adapter =
-                CoursesBlockAdapter(CourseBlockDataFactory.getCourseBlock())
+                CoursesBlockAdapter(CourseBlockDataFactory.getCourseBlock() as ArrayList<CourseBlock>)
         }
 
     }
