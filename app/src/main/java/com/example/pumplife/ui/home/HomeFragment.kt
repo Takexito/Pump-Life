@@ -11,11 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.adapters.CoursesBlockAdapter
+
 import com.example.pumplife.adapters.InfoPagerAdapter
 import com.example.pumplife.adapters.ThemesAdapter
 import com.example.pumplife.factories.CourseBlockDataFactory
 import com.example.pumplife.factories.CourseThemeDataFactory
 import kotlinx.android.synthetic.main.fragment_course_info.*
+
+import com.example.pumplife.controller.CoursesDB
+
 
 class HomeFragment : Fragment() {
 
@@ -41,16 +45,29 @@ class HomeFragment : Fragment() {
     }
 
     fun setRecyclerViews(){
+        coursesBlockRecyclerView = root.findViewById(R.id.recyclerView_course_block)
+        //CoursesBlockAdapter(CourseBlockDataFactory.getCourseBlock() as ArrayList<CourseBlock>)
+        CoursesDB.init(this)
 
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+    }
+
+    fun updateAdapter(){
+        coursesBlockRecyclerView.adapter!!.notifyDataSetChanged()
+    }
+    fun createAdapter(){
         coursesBlockRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
-            adapter =
-                CoursesBlockAdapter(CourseBlockDataFactory.getCourseBlock())
+            adapter = //CoursesBlockAdapter(arrayListOf(CourseBlock(0, Themes.FINANCE, DataBase.data)))
+            CoursesBlockAdapter(CoursesDB.data)
         }
 
     }
 
     fun setOnClickListeners() {
-
     }
 }

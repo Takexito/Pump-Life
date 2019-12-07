@@ -10,8 +10,7 @@ import com.example.pumplife.R
 import com.example.pumplife.model.CourseBlock
 
 
-
-class CoursesBlockAdapter(private val courseBlockList : MutableList<CourseBlock>): RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {
+class CoursesBlockAdapter(private val courseBlockList : ArrayList<CourseBlock>): RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
@@ -24,16 +23,19 @@ class CoursesBlockAdapter(private val courseBlockList : MutableList<CourseBlock>
 
     override fun onBindViewHolder(holder: CoursesBlockHolder, position: Int) {
         val courseBlock = courseBlockList[position]
-        holder.courseBlockTitleTextView.text = courseBlock.title
+        holder.courseBlockTitleTextView.text = courseBlock.theme.name
         holder.courseView.apply {
             layoutManager =
                 LinearLayoutManager(holder.courseView.context, RecyclerView.HORIZONTAL, false)
             adapter = CoursesAdapter(courseBlock.courseList)
             setRecycledViewPool(viewPool)
+
+
         }
     }
 
-    inner class CoursesBlockHolder(view: View): RecyclerView.ViewHolder(view) {
+
+    inner class CoursesBlockHolder(view: View): RecyclerView.ViewHolder(view){
 
         val courseBlockTitleTextView = itemView.findViewById<TextView>(R.id.course_block_title)
         val courseView: RecyclerView = itemView.findViewById(R.id.recyclerView_course)

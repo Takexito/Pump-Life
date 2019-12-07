@@ -1,16 +1,18 @@
 package com.example.pumplife.model
 
+import android.media.Image
+
 class Course (
-    val id: Int,
-    val title: String/*,
-     val description: String,
-     val image: Image,
-     private val cardList: ArrayList<Card>,
-     val theme: Themes,
-     var completedCardNum: Int = 0,
-     var currentCardNum: Int = 0 */
+    val id: Int = 0,
+    val title: String = "title",
+    val description: String = "Description of this course",
+    val image: String = "https://sun9-60.userapi.com/c858032/v858032528/10d752/9OdTprLe5EY.jpg",
+    val cardList: ArrayList<Card> = arrayListOf(TheorCard("Card Title", "Lesson number 1. Just do it!", false)),
+    val theme: Themes = Themes.FINANCE,
+    var completedCardNum: Int = 0,
+    var currentCardNum: Int = completedCardNum
  ){
-     /*private val cardNum: Int = cardList.size
+     private val cardNum: Int = cardList.size
 
      fun nextCard(): Card?{
          if (currentCardNum >= cardList.size - 1) return null
@@ -26,8 +28,8 @@ class Course (
          return cardList.size == completedCardNum
      }
 
-     fun getPercent(): Int{
+     fun percent(): Int{
          return (completedCardNum.toFloat()/currentCardNum.toFloat()).toInt() * 100
-     } */
+     }
 
  }

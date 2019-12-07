@@ -25,7 +25,9 @@
         style="@style/BottomBar"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:background="#292929"
+
+        android:background="#E7E7E7"
+
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

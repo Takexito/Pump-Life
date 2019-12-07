@@ -23,12 +23,12 @@
         tools:layout="@layout/fragment_my_courses" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.pumplife.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
-    <fragment
         android:id="@+id/courseDescriptionFragment"
         android:name="com.example.pumplife.ui.home.CourseInfoFragment"
         android:label="CourseDescriptionFragment" />
+<fragment
+        android:id="@+id/navigation_cabinet"
+        android:name="com.example.pumplife.ui.cabinet.CabinetFragment"
+        android:label="@string/title_cabinet"
+        tools:layout="@layout/fragment_cabinet" />
 </navigation>

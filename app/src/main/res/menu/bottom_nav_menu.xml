@@ -10,7 +10,8 @@
         android:icon="@drawable/ic_my_courses" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_settings" />
+        android:id="@+id/navigation_cabinet"
+        android:icon="@drawable/ic_cabinet_24dp"
+        android:title="@string/title_cabinet" />
 
 </menu>

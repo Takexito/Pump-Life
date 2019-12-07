@@ -22,6 +22,7 @@ class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoursesHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.course_item, parent, false)
         contexxt = parent.context
+
         return CoursesHolder(view)
     }
 
@@ -39,9 +40,11 @@ class CoursesAdapter(private val courseList : MutableList<Course>): RecyclerView
         }
     }
 
-    inner class CoursesHolder(view: View): RecyclerView.ViewHolder(view) {
-
-        val titleTextView = itemView.findViewById<TextView>(R.id.course_name)
 
     }
+
+    inner class CoursesHolder(view: View): RecyclerView.ViewHolder(view){
+        val titleTextView = itemView.findViewById<TextView>(R.id.course_name)
+    }
 }
+
