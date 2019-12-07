@@ -108,7 +108,7 @@
         app:srcCompat="@android:drawable/btn_dialog" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/titleView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="190dp"
@@ -128,7 +128,7 @@
         android:layout_marginStart="113dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/google_sign_in_button"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/titleView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/google_sign_in_button"
         app:srcCompat="@drawable/ic_dashboard_black_24dp" />
@@ -141,8 +141,8 @@
         android:layout_marginEnd="113dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/titleView"
+        app:layout_constraintTop_toBottomOf="@+id/titleView"
         app:srcCompat="@drawable/ic_home_black_24dp" />
 
     <androidx.constraintlayout.widget.Guideline

@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val user = User(userData = arrayListOf(UserData(0,0,true), UserData(2,1,false)))
+        val user = User(userData = arrayListOf(UserData(0,1,true), UserData(2,1,false)))
         CourseManager.user = user
 
     }

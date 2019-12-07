@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.adapters.InfoPagerAdapter
 import com.example.pumplife.adapters.ThemesAdapter
+import com.example.pumplife.controller.CourseManager
 import com.example.pumplife.factories.CourseThemeDataFactory
+import kotlinx.android.synthetic.main.fragment_course_description.*
 import kotlinx.android.synthetic.main.fragment_course_info.*
 
 class CourseDescriptionFragment: Fragment() {
@@ -22,6 +24,11 @@ class CourseDescriptionFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_course_description, container, false)
         return  view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        descriptionView.text = CourseManager.currCourse.description
     }
 
 }

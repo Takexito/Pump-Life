@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/titleView"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:gravity="center"
@@ -31,7 +31,8 @@
                 android:id="@+id/course_progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="15dp" />
+                android:layout_height="15dp"
+                android:progress="0" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"

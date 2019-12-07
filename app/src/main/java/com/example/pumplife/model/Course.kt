@@ -30,7 +30,7 @@ class Course (
      }
 
      fun percent(): Int{
-         return (completedCardNum.toFloat()/currentCardNum.toFloat()).toInt() * 100
+         return (completedCardNum.toFloat()/cardList.size.toFloat()).toInt() * 100
      }
 
  }
