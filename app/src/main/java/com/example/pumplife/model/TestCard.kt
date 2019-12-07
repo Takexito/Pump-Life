@@ -5,8 +5,10 @@ class TestCard(
     val questionsList: ArrayList<Question> = arrayListOf(Question()),
     var isComplete: Boolean = false,
     var currQuestion: Int = 0,
-    var correctAnswerNum: Int = 0
+    var correctAnswerNum: Int = 0,
+    var userAnswer: ArrayList<String> = arrayListOf()
 ): Card() {
+
     fun nextQuestion(): Question? {
         if (currQuestion >= questionsList.size - 1) return null
         return questionsList[currQuestion++]
@@ -19,5 +21,11 @@ class TestCard(
         }
         return false
     }
+
+    fun copy(card: TestCard){
+        isComplete = card.isComplete
+        correctAnswerNum = card.correctAnswerNum
+    }
+
 
 }

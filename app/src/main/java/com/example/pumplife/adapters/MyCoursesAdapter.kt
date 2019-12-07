@@ -5,19 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.MainActivity
 import com.example.pumplife.R
 import com.example.pumplife.controller.CourseManager
-import com.example.pumplife.model.Course
-import com.example.pumplife.model.Themes
-import com.example.pumplife.ui.home.CourseInfoFragment
-import com.example.pumplife.ui.home.HomeFragment
 
-class CoursesAdapter(var theme: Themes): RecyclerView.Adapter<CoursesAdapter.CoursesHolder>() {
+class MyCoursesAdapter() : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() {
 
     lateinit var contexxt: Context
 
@@ -28,24 +21,23 @@ class CoursesAdapter(var theme: Themes): RecyclerView.Adapter<CoursesAdapter.Cou
         return CoursesHolder(view)
     }
 
-    override fun getItemCount(): Int = CourseManager.getCourseBlockSize(theme)
+    override fun getItemCount(): Int = CourseManager.startList.size
 
-    override fun onBindViewHolder(holder: CoursesHolder, position: Int) {
-        bind(holder, position)
-    }
 
-    private fun bind(holder: CoursesHolder, position: Int){
-        val course = CourseManager.getCourseByIndex(theme, position) ?: Course() //courseList[position]
-        CourseManager.checkUserData(course)
+    private fun bind(holder: CoursesHolder, position: Int) {
+        val course = CourseManager.startList[position]
         holder.titleTextView.text = course.title
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             CourseManager.currCourse = course
             (contexxt as MainActivity).navController.navigate(R.id.courseInfoFragment)
         }
     }
 
-    inner class CoursesHolder(view: View): RecyclerView.ViewHolder(view){
+    inner class CoursesHolder(view: View) : RecyclerView.ViewHolder(view) {
         val titleTextView = itemView.findViewById<TextView>(R.id.course_name)
     }
-}
 
+    override fun onBindViewHolder(holder: CoursesHolder, position: Int) {
+        bind(holder, position)
+    }
+}

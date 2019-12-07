@@ -7,10 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
+import com.example.pumplife.controller.CourseManager
 import com.example.pumplife.model.CourseBlock
+import com.example.pumplife.model.Themes
 
 
-class CoursesBlockAdapter(private val courseBlockList : ArrayList<CourseBlock>): RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {
+class CoursesBlockAdapter(): RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
@@ -19,18 +21,15 @@ class CoursesBlockAdapter(private val courseBlockList : ArrayList<CourseBlock>):
         return CoursesBlockHolder(view)
     }
 
-    override fun getItemCount(): Int = courseBlockList.size
+    override fun getItemCount(): Int = CourseManager.coursesBlockList.size
 
     override fun onBindViewHolder(holder: CoursesBlockHolder, position: Int) {
-        val courseBlock = courseBlockList[position]
+        val courseBlock = CourseManager.coursesBlockList[position]//courseBlockList[position]
         holder.courseBlockTitleTextView.text = courseBlock.theme.name
         holder.courseView.apply {
-            layoutManager =
-                LinearLayoutManager(holder.courseView.context, RecyclerView.HORIZONTAL, false)
-            adapter = CoursesAdapter(courseBlock.courseList)
+            layoutManager = LinearLayoutManager(holder.courseView.context, RecyclerView.HORIZONTAL, false)
+            adapter = CoursesAdapter(courseBlock.theme)
             setRecycledViewPool(viewPool)
-
-
         }
     }
 

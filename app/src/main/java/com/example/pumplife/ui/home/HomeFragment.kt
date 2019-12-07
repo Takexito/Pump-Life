@@ -14,6 +14,7 @@ import com.example.pumplife.adapters.CoursesBlockAdapter
 
 import com.example.pumplife.adapters.InfoPagerAdapter
 import com.example.pumplife.adapters.ThemesAdapter
+import com.example.pumplife.controller.CourseManager
 import com.example.pumplife.factories.CourseBlockDataFactory
 import com.example.pumplife.factories.CourseThemeDataFactory
 import kotlinx.android.synthetic.main.fragment_course_info.*
@@ -38,35 +39,23 @@ class HomeFragment : Fragment() {
         coursesBlockRecyclerView = root.findViewById(R.id.recyclerView_course_block)
         coursesCardView = view.findViewById(R.id.course_card_view)
 
-        setRecyclerViews()
-        setOnClickListeners()
-
+        CoursesDB.init(this)
+        CourseManager.context = this
         return root
     }
 
-    fun setRecyclerViews(){
-        //CoursesBlockAdapter(CourseBlockDataFactory.getCourseBlock() as ArrayList<CourseBlock>)
-        CoursesDB.init(this)
-
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-    }
 
     fun updateAdapter(){
-        coursesBlockRecyclerView.adapter!!.notifyDataSetChanged()
+        coursesBlockRecyclerView.adapter?.notifyDataSetChanged()
     }
+
     fun createAdapter(){
+        CourseManager.clear()
         coursesBlockRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
-            adapter = //CoursesBlockAdapter(arrayListOf(CourseBlock(0, Themes.FINANCE, DataBase.data)))
-            CoursesBlockAdapter(CoursesDB.data)
+            adapter = CoursesBlockAdapter() //CoursesBlockAdapter(arrayListOf(CourseBlock(0, Themes.FINANCE, DataBase.data)))
+
         }
 
-    }
-
-    fun setOnClickListeners() {
     }
 }

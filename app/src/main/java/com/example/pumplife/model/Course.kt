@@ -1,13 +1,14 @@
 package com.example.pumplife.model
 
-import android.media.Image
 
 class Course (
     val id: Int = 0,
     val title: String = "title",
     val description: String = "Description of this course",
     val image: String = "https://sun9-60.userapi.com/c858032/v858032528/10d752/9OdTprLe5EY.jpg",
-    val cardList: ArrayList<Card> = arrayListOf(TheorCard("Card Title", "Lesson number 1. Just do it!", false)),
+    val cardList: ArrayList<TheorCard> = arrayListOf(TheorCard("Card Title", "Lesson number 1. Just do it!", false)),
+    val testCard: TestCard = TestCard(),
+    var testComplete: Boolean = false,
     val theme: Themes = Themes.FINANCE,
     var completedCardNum: Int = 0,
     var currentCardNum: Int = completedCardNum
