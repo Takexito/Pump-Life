@@ -7,7 +7,7 @@ object CourseBlockDataFactory {
     fun getCourseBlock(): MutableList<CourseBlock> {
         val courseBlockList = mutableListOf<CourseBlock>()
         val courseList = CourseDataFactory.getCourse()
-        for (i in 0..10) {
+        for (i in 0..2) {
             val CourseBlock = CourseBlock(i, "Title $i", courseList)
             courseBlockList.add(CourseBlock)
         }

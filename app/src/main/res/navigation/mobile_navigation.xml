@@ -10,7 +10,11 @@
         android:id="@+id/navigation_home"
         android:name="com.example.pumplife.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_courseDescriptionFragment"
+            app:destination="@id/courseDescriptionFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_my_courses"
@@ -23,4 +27,8 @@
         android:name="com.example.pumplife.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/courseDescriptionFragment"
+        android:name="com.example.pumplife.ui.home.CourseInfoFragment"
+        android:label="CourseDescriptionFragment" />
 </navigation>
