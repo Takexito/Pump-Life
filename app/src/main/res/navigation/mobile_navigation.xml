@@ -3,21 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_home"
+    app:labelVisibilityMode="unlabeled">
 
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.pumplife.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_courseDescriptionFragment"
+            app:destination="@id/courseDescriptionFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.pumplife.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_my_courses"
+        android:name="com.example.pumplife.ui.myCourses.MyCoursesFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_my_courses" />
 
     <fragment
+        android:id="@+id/courseDescriptionFragment"
+        android:name="com.example.pumplife.ui.home.CourseInfoFragment"
+        android:label="CourseDescriptionFragment" />
+<fragment
         android:id="@+id/navigation_cabinet"
         android:name="com.example.pumplife.ui.cabinet.CabinetFragment"
         android:label="@string/title_cabinet"

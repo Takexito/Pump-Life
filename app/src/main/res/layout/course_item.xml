@@ -3,6 +3,7 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/course_card_view"
+
         android:layout_width="300dp"
         android:layout_height="180dp"
         android:layout_marginStart="13dp"
