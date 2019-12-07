@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "989930762708",
+    "firebase_url": "https://pump-life.firebaseio.com",
+    "project_id": "pump-life",
+    "storage_bucket": "pump-life.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989930762708:android:ac680effd6c78fb08f6641",
+        "android_client_info": {
+          "package_name": "com.example.pumplife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "989930762708-p90l6j20d5oq96g82isr60omfjdj9nn2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pumplife",
+            "certificate_hash": "03ea65ba6c4228ee5c4a32bb89506bfa3ad32516"
+          }
+        },
+        {
+          "client_id": "989930762708-8rhdqi5c3fnmteg1spnupbjv0agaj4of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBguUNdSOpNWy6sZsr3AbH1nghRJcy2pto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "989930762708-8rhdqi5c3fnmteg1spnupbjv0agaj4of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

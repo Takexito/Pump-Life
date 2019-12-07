@@ -1,5 +1,7 @@
 package com.example.pumplife.model
 
-interface Card{
-    fun isTestCard(): Boolean
+open class Card(val isTest: Boolean = false){
+    fun isTestCard(): Boolean{
+        return isTest
+    }
 }
