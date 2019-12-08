@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Pump Life</string>
-    <string name="title_home">КУРСЫ</string>
-    <string name="title_dashboard">МОИ КУРСЫ</string>
-    <string name="title_cabinet">Кабинет</string>
-    <string name="courses">КУРСЫ</string>
+    <string name="title_home">Курсы</string>
+    <string name="title_dashboard">Мои курсы</string>
+    <string name="title_cabinet">Личный кабинет</string>
+    <string name="courses">Курсы</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
