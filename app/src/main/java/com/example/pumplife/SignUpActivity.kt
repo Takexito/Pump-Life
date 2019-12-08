@@ -4,15 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pumplife.controller.UsersDB
+import com.example.pumplife.model.UserData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
 
-    private var mAuth = FirebaseAuth.getInstance()
+    private var mAuth = UsersDB.mAuth
     private var mDatabase = FirebaseDatabase.getInstance()
-    private var mRef = mDatabase!!.reference.child("Users")
+    private var mRef = mDatabase.reference.child("Users")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +34,7 @@ class SignUpActivity : AppCompatActivity() {
                 mAuth
                     .createUserWithEmailAndPassword(email, password)
                     .addOnSuccessListener {
-                        var user = mAuth.currentUser!!.uid
-                        mRef.child(user).child("id").setValue(mAuth.currentUser!!.uid)
-                        mRef.child(user).child("name").setValue(name)
-                        mRef.child(user).child("email").setValue(email)
-                        mRef.child(user).child("image").setValue("")
-                        mRef.child(user).child("userData").setValue(null)
+                        UsersDB.createUser(edit_name.text.toString(), edit_email.text.toString())
 
                         val intent = Intent(this, MainActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

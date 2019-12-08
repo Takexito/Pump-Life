@@ -16,17 +16,22 @@ class Course (
      private val cardNum: Int = cardList.size
 
      fun nextCard(): Card?{
-         if (currentCardNum > cardList.size - 1) return null
-         completedCardNum++
-         return cardList[currentCardNum++]
+         if (currentCardNum >= cardList.size) return null
+
+         return cardList[completedCardNum++]
      }
+
+    fun preCard(): Card?{
+        if (completedCardNum - 1 < 0 ) return null
+        return cardList[completedCardNum - 1]
+    }
 
      fun isFullyCompleted(): Boolean{
          return cardList.size == completedCardNum
      }
 
      fun percent(): Int{
-         return (completedCardNum.toFloat()/cardList.size.toFloat()).toInt() * 100
+         return ((completedCardNum.toFloat()/cardList.size.toFloat()) * 100).toInt()
      }
 
  }

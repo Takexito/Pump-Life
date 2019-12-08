@@ -7,15 +7,15 @@ import com.google.firebase.database.*
 
 
 object CoursesDB {
-    val database = FirebaseDatabase.getInstance()
-    val myRef = database.getReference("Courses").child("-LvMPd1JOBCekMNr9xto")
+    private val database = FirebaseDatabase.getInstance()
+    private val myRef = database.getReference("Courses").child("-LvMPd1JOBCekMNr9xto")
     var data = arrayListOf<CourseBlock>()
     lateinit var postListener: ValueEventListener
 
-    fun init(context: HomeFragment) {
+    fun init() {
         postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                update(dataSnapshot, context)
+                update(dataSnapshot)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -25,7 +25,7 @@ object CoursesDB {
         myRef.addValueEventListener(postListener)
     }
 
-    fun update(dataSnapshot: DataSnapshot, context: HomeFragment){
+    fun update(dataSnapshot: DataSnapshot){
         //Get Post object and use the values to update the UI
         val genericTypeIndicator: GenericTypeIndicator<ArrayList<CourseBlock>> =
             object :

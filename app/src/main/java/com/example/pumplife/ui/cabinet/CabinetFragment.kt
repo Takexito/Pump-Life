@@ -2,17 +2,21 @@ package com.example.pumplife.ui.cabinet
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.pumplife.SignInActivity
+import com.example.pumplife.controller.CourseManager
+import com.example.pumplife.controller.UsersDB
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.fragment_cabinet.*
 import kotlinx.android.synthetic.main.fragment_cabinet.view.*
 
 
@@ -59,6 +63,12 @@ class CabinetFragment: Fragment() {
         }
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        user_name.text = CourseManager.user.name
+        Log.d("USERNAME", CourseManager.user.name)
     }
 
 }

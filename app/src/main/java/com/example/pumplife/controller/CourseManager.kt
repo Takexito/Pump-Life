@@ -1,5 +1,6 @@
 package com.example.pumplife.controller
 
+import android.util.Log
 import com.example.pumplife.model.*
 import com.example.pumplife.ui.home.HomeFragment
 
@@ -9,7 +10,6 @@ object CourseManager {
     var startList: ArrayList<Course> = arrayListOf()
     lateinit var user: User
     lateinit var currCourse: Course
-    var isFirst = true
     var context: HomeFragment? = null
 
     fun setCourseBlockList(list: ArrayList<CourseBlock>) {
@@ -22,6 +22,16 @@ object CourseManager {
         startList.clear()
     }
 
+    fun saveUserData(course: Course, num: Int, isTest: Boolean = false){
+        val us = user.userData.find{ it.courseId == course.id }
+        if(us == null) user.userData.add(UserData(course.id, num, isTest))
+        else {
+            us.cardNum = num
+        }
+        Log.d("User", "save to user and course $num")
+        course.completedCardNum = num
+    }
+
     fun checkUserData(course: Course) {
         user.userData.forEach {
             if (it.courseId == course.id) restoreData(course, it)
@@ -32,7 +42,19 @@ object CourseManager {
         course.completedCardNum = data.cardNum
         course.testComplete = data.isTest
         course.testCard.userAnswer = data.answer
-        if (course.testComplete) completeList.add(course)
+        listCreate(course)
+    }
+
+    fun check(){
+        coursesBlockList.forEach {block ->
+            block.courseList.forEach{
+                checkUserData(it)
+            }
+        }
+    }
+
+    fun listCreate(course: Course){
+        if (course.isFullyCompleted()) completeList.add(course)
         else startList.add(course)
     }
 
@@ -59,9 +81,7 @@ object CourseManager {
 
     fun updateAdapter() {
         if (context == null) return
-        if (isFirst) {
             context!!.createAdapter()
-        } else
-            context!!.updateAdapter()
+
     }
 }

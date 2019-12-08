@@ -28,9 +28,9 @@ class CourseDescriptionFragment: Fragment() {
         return  view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        if(CourseManager.currCourse.completedCardNum > 0) start_button.text = "Прожолжить"
+    override fun onResume() {
+        super.onResume()
+        if(CourseManager.currCourse.completedCardNum > 0) start_button.text = "Продолжить"
         descriptionView.text = CourseManager.currCourse.description
         start_button.setOnClickListener{
             startActivity(Intent(context, CourseActivity::class.java))

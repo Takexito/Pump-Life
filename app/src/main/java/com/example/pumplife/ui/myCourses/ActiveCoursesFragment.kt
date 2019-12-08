@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.adapters.MyCoursesAdapter
+import com.example.pumplife.controller.CourseManager
 
 class ActiveCoursesFragment: Fragment() {
 
@@ -30,11 +31,15 @@ class ActiveCoursesFragment: Fragment() {
     }
 
     fun setRecyclerViews(){
-
         activeCoursesBlockRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
             adapter = MyCoursesAdapter()
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setRecyclerViews()
     }
 }

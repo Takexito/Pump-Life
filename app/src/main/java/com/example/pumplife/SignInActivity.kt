@@ -2,8 +2,10 @@ package com.example.pumplife
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pumplife.controller.UsersDB
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
@@ -17,9 +19,11 @@ class SignInActivity : AppCompatActivity() {
 
         val user = mAuth.currentUser
 
-        if (user !== null) {
+        if (user != null) {
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            Log.d("USER", "Запрос данных")
+            UsersDB.getUserData()
             startActivity(intent)
         }
 
@@ -36,6 +40,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnSuccessListener {
                         val intent = Intent(this, MainActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        UsersDB.getUserData()
                         startActivity(intent)
                     }
 
@@ -47,7 +52,6 @@ class SignInActivity : AppCompatActivity() {
         }
 
         stop_button.setOnClickListener {
-            //Выход из Activity
             finish()
         }
 

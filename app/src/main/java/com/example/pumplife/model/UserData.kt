@@ -4,8 +4,8 @@ data class UserData (
     //val courses: ArrayList<Course> = arrayListOf()//id course
 //num fo end
 //is test
-    val courseId: Int,
-    val cardNum: Int,
-    val isTest: Boolean,
-    val answer: ArrayList<String> = arrayListOf()
+    var courseId: Int = 0,
+    var cardNum: Int = 0,
+    var isTest: Boolean = false,
+    var answer: ArrayList<String> = arrayListOf()
 )
