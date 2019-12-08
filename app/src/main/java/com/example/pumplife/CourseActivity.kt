@@ -25,6 +25,9 @@ class CourseActivity : AppCompatActivity() {
             next()
             card = null
         }
+        button.setOnClickListener{
+            close()
+        }
     }
 
     fun next() {

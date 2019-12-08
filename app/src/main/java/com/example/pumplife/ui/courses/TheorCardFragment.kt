@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.pumplife.CourseActivity
 import com.example.pumplife.R
+import com.example.pumplife.controller.CourseManager
+import com.example.pumplife.controller.UsersDB
 import kotlinx.android.synthetic.main.fragment_test_card.*
 import kotlinx.android.synthetic.main.fragment_theor_card.*
 
@@ -20,8 +22,7 @@ class TheorCardFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_theor_card, container, false)
         activity = context as CourseActivity
-
-
+        CourseManager.saveUserData(activity.course, activity.course.completedCardNum)
         return view
     }
 

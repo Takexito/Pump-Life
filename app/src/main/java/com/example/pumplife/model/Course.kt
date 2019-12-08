@@ -16,9 +16,9 @@ class Course (
      private val cardNum: Int = cardList.size
 
      fun nextCard(): Card?{
-         if (currentCardNum > cardList.size - 1) return null
-         completedCardNum++
-         return cardList[currentCardNum++]
+         if (completedCardNum >= cardList.size) return null
+
+         return cardList[completedCardNum++]
      }
 
      fun isFullyCompleted(): Boolean{

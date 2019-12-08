@@ -1,5 +1,6 @@
 package com.example.pumplife.controller
 
+import android.util.Log
 import com.example.pumplife.model.*
 import com.example.pumplife.ui.home.HomeFragment
 
@@ -20,6 +21,16 @@ object CourseManager {
     fun clear(){
         completeList.clear()
         startList.clear()
+    }
+
+    fun saveUserData(course: Course, num: Int, isTest: Boolean = false){
+        val us = user.userData.find{ it.courseId == course.id }
+        if(us == null) user.userData.add(UserData(course.id, num, isTest))
+        else {
+            us.cardNum = num
+        }
+        Log.d("User", "save to user and course $num")
+        course.completedCardNum = num
     }
 
     fun checkUserData(course: Course) {

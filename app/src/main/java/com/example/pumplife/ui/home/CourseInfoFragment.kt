@@ -15,21 +15,12 @@ import kotlinx.android.synthetic.main.fragment_course_info.*
 
 class CourseInfoFragment: Fragment() {
 
-    lateinit var backButton: Button
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_course_info, container, false)
-
-//        backButton = view.findViewById(R.id.back_button)
-//
-//        backButton.setOnClickListener{
-//            /*val tr = getFragmentManager()!!.beginTransaction()
-//            tr.add(R.id.nav_host_fragment, HomeFragment()) */
-//        }
 
         return  view
     }
