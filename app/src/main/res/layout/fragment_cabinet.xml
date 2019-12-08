@@ -42,7 +42,7 @@
         android:background="@drawable/ic_button_bg"
         android:text="Сменить аватар"
         android:textColor="#FFFEFE"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/change_password_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
         android:background="@drawable/ic_button_bg"
         android:text="Сменить пароль"
         android:textColor="#FFFEFE"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/change_user_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -69,7 +69,7 @@
         android:background="@drawable/ic_button_bg"
         android:text="Выйти"
         android:textColor="#FFFEFE"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

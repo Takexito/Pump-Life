@@ -48,9 +48,9 @@ class SignUpActivity : AppCompatActivity() {
             } else Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_SHORT).show()
         }
 
-        stop_button.setOnClickListener {
-            finish()
-        }
+//        stop_button.setOnClickListener {
+//            finish()
+//        }
 
         delete_email_button.setOnClickListener {
             edit_email.text = null
