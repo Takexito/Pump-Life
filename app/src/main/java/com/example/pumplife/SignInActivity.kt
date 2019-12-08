@@ -4,13 +4,24 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
 
+    private var mAuth = FirebaseAuth.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
+        val user = mAuth.currentUser
+
+        if (user !== null) {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
 
         go_to_sign_up_button.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
@@ -21,12 +32,17 @@ class SignInActivity : AppCompatActivity() {
             val email = edit_email.text.toString()
             val password = edit_pass.text.toString()
             if (email.isNotEmpty() && password.isNotEmpty()) {
+                mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnSuccessListener {
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    }
 
-                //Вход пользователя по бд
+                    .addOnFailureListener{
+                        Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
+                    }
 
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                intent.flags = Intent.FLAG_ACTIVITY_NO_HISTORY
             } else Toast.makeText(this, "Введите почту и пароль", Toast.LENGTH_LONG).show()
         }
 
