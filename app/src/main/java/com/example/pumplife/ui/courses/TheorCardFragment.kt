@@ -43,5 +43,6 @@ class TheorCardFragment: Fragment() {
                 activity.next()
             }
         }
+
     }
 }
