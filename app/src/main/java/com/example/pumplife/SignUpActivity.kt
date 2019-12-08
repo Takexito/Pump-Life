@@ -27,14 +27,15 @@ class SignUpActivity : AppCompatActivity() {
             val email = edit_email.text.toString()
             val password = edit_pass.text.toString()
             val confPass = repeat_pass.text.toString()
-            if (password == confPass && password.isNotEmpty() && email.isNotEmpty()) {
+            val name = edit_name.text.toString()
+            if (password == confPass && password.isNotEmpty() && email.isNotEmpty() && name.isNotEmpty()) {
                 mAuth
                     .createUserWithEmailAndPassword(email, password)
                     .addOnSuccessListener {
                         var user = mAuth.currentUser!!.uid
                         mRef.child(user).child("id").setValue(mAuth.currentUser!!.uid)
-                        mRef.child(user).child("name").setValue(edit_name.toString())
-                        mRef.child(user).child("email").setValue(edit_email.toString())
+                        mRef.child(user).child("name").setValue(name)
+                        mRef.child(user).child("email").setValue(email)
                         mRef.child(user).child("image").setValue("")
                         mRef.child(user).child("userData").setValue(null)
 

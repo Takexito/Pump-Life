@@ -9,7 +9,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.pumplife.SignInActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_cabinet.view.*
 
 
@@ -29,24 +32,23 @@ class CabinetFragment: Fragment() {
         val view = inflater.inflate(com.example.pumplife.R.layout.fragment_cabinet, container, false)
 
         //Замена Username на имя пользователя
-        //mRef.addValueEventListener(object : ValueEventListener {
-//
-        //    override fun onDataChange(dataSnapshot: DataSnapshot) {
-        //        view.user_name.text = dataSnapshot.getValue(String::class.java)
-        //    }
-//
-        //    override fun onCancelled(error: DatabaseError) {
-        //        Toast.makeText(activity, "Failed to read value.", Toast.LENGTH_LONG).show()
-        //        Log.w(TAG, "Failed to read value.", error.toException())
-        //    }
-        //})
+        mRef.child(mAuth.currentUser!!.uid).child("name").addListenerForSingleValueEvent(object :
+            ValueEventListener {
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                view.user_name.text = dataSnapshot.getValue(true).toString()
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
 
         view.change_avatar_button.setOnClickListener{
             Toast.makeText(activity, "Change avatar", Toast.LENGTH_LONG).show()
+
         }
 
         view.change_password_button.setOnClickListener{
-            Toast.makeText(activity, "Change password", Toast.LENGTH_LONG).show()
+            ChangePasswordFragment().show(childFragmentManager, "change_password_dialog")
         }
 
         view.change_user_button.setOnClickListener{
