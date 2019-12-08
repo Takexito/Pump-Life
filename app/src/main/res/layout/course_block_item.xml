@@ -29,7 +29,7 @@
                 android:background="@drawable/title_bg"
                 android:gravity="center"
                 android:text="Main title"
-                android:textColor="#B1B0B5"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:textSize="24sp" />
 
             <androidx.recyclerview.widget.RecyclerView

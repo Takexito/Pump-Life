@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 app:tabIndicatorColor="#007AFF"
                 app:tabMode="fixed"
-                app:tabTextColor="#B1B0B5">
+                app:tabTextColor="@color/common_google_signin_btn_text_dark_default">
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
