@@ -19,8 +19,7 @@
     <fragment
         android:id="@+id/navigation_my_courses"
         android:name="com.example.pumplife.ui.myCourses.MyCoursesFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_my_courses" >
+        android:label="@string/title_dashboard">
         <action
             android:id="@+id/action_navigation_my_courses_to_courseInfoFragment"
             app:destination="@id/courseInfoFragment" />

@@ -36,4 +36,9 @@ class CourseInfoFragment: Fragment() {
         course_progressBar.progress = CourseManager.currCourse.percent()
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        course_progressBar.progress = CourseManager.currCourse.percent()
+    }
 }

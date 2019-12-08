@@ -28,8 +28,8 @@ class CourseDescriptionFragment: Fragment() {
         return  view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onResume() {
+        super.onResume()
         if(CourseManager.currCourse.completedCardNum > 0) start_button.text = "Прожолжить"
         descriptionView.text = CourseManager.currCourse.description
         start_button.setOnClickListener{

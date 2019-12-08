@@ -37,6 +37,7 @@ class CoursesAdapter(var theme: Themes): RecyclerView.Adapter<CoursesAdapter.Cou
     private fun bind(holder: CoursesHolder, position: Int){
         val course = CourseManager.getCourseByIndex(theme, position) ?: Course() //courseList[position]
         CourseManager.checkUserData(course)
+        CourseManager.listCreate(course)
         holder.titleTextView.text = course.title
         holder.itemView.setOnClickListener{
             CourseManager.currCourse = course

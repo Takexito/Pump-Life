@@ -10,7 +10,7 @@ import com.example.pumplife.MainActivity
 import com.example.pumplife.R
 import com.example.pumplife.controller.CourseManager
 
-class MyCoursesAdapter() : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() {
+class MyCoursesAdapter : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() {
 
     lateinit var contexxt: Context
 

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.pumplife.R
 import com.example.pumplife.adapters.MyCoursesPagerAdapter
+import com.example.pumplife.controller.CourseManager
 import kotlinx.android.synthetic.main.fragment_my_courses.*
 
 class MyCoursesFragment : Fragment() {
@@ -23,9 +24,18 @@ class MyCoursesFragment : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         val infoPagerAdapter = MyCoursesPagerAdapter(getChildFragmentManager())
         viewpager2.adapter = infoPagerAdapter
         tabLayout2.setupWithViewPager(viewpager2)
-        super.onActivityCreated(savedInstanceState)
+        CourseManager.clear()
+        CourseManager.check()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        CourseManager.clear()
+        CourseManager.check()
     }
 }

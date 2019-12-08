@@ -42,4 +42,9 @@ class PassedCoursesFragment: Fragment() {
         }
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        setRecyclerViews()
+    }
 }

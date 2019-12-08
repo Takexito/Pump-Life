@@ -42,7 +42,19 @@ object CourseManager {
         course.completedCardNum = data.cardNum
         course.testComplete = data.isTest
         course.testCard.userAnswer = data.answer
-        if (course.testComplete) completeList.add(course)
+        listCreate(course)
+    }
+
+    fun check(){
+        coursesBlockList.forEach {block ->
+            block.courseList.forEach{
+                checkUserData(it)
+            }
+        }
+    }
+
+    fun listCreate(course: Course){
+        if (course.isFullyCompleted()) completeList.add(course)
         else startList.add(course)
     }
 
