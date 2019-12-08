@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:layout_marginTop="14dp"
-                android:background="@drawable/ic_button_bg"
+                android:background="@drawable/btn_rounded"
                 android:text="Начать курс"
                 android:textColor="#FFFEFE" />
         </LinearLayout>

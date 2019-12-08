@@ -51,9 +51,6 @@ class SignInActivity : AppCompatActivity() {
             } else Toast.makeText(this, "Введите почту и пароль", Toast.LENGTH_LONG).show()
         }
 
-        stop_button.setOnClickListener {
-            finish()
-        }
 
         delete_email_button.setOnClickListener {
             edit_email.text = null
