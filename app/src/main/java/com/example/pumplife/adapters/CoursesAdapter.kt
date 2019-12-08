@@ -1,6 +1,7 @@
 package com.example.pumplife.adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,7 +42,7 @@ class CoursesAdapter(var theme: Themes): RecyclerView.Adapter<CoursesAdapter.Cou
         holder.titleTextView.text = course.title
         holder.itemView.setOnClickListener{
             CourseManager.currCourse = course
-            (contexxt as MainActivity).navController.navigate(R.id.courseInfoFragment)
+            (contexxt as MainActivity).navController.navigate(R.id.action_navigation_home_to_courseInfoFragment)//, Bundle(1).putString("title", course.title) )
         }
     }
 

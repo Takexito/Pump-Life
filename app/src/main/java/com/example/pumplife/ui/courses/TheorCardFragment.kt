@@ -45,4 +45,9 @@ class TheorCardFragment: Fragment() {
         }
 
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity.title = activity.card?.title ?: "Конец"
+    }
 }

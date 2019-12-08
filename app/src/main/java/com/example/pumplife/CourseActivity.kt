@@ -16,20 +16,17 @@ class CourseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_course)
+
         cardID = course.completedCardNum
-        if(!course.isFullyCompleted()) {
-            card = course.cardList[cardID]
-            supportFragmentManager.beginTransaction().replace(R.id.courseFragment, TheorCardFragment()).addToBackStack(null).commit()
-        }
-        else {
-            card = null
-            supportFragmentManager.beginTransaction().replace(R.id.courseFragment, TheorCardFragment()).addToBackStack(null).commit()
-        }
-        closeButton.setOnClickListener{
-            close()
-        }
+        setCard()
+
+//        closeButton.setOnClickListener{
+//            close()
+//        }
         progressBar.progress = course.percent()
     }
+
+
     fun next() {
         if (cardID++ >= course.cardList.size - 1){
             card = null
@@ -40,6 +37,7 @@ class CourseActivity : AppCompatActivity() {
             if(cardID >= course.completedCardNum) course.completedCardNum++
         }
         progressBar.progress = course.percent()
+        textView.text = card?.title
         supportFragmentManager.beginTransaction().replace(R.id.courseFragment, TheorCardFragment()).commit()
     }
 
@@ -53,5 +51,17 @@ class CourseActivity : AppCompatActivity() {
 
     fun close() {
         super.finish()
+    }
+
+    fun setCard(){
+        if(!course.isFullyCompleted()) {
+            card = course.cardList[cardID]
+            supportFragmentManager.beginTransaction().replace(R.id.courseFragment, TheorCardFragment()).commit()
+        }
+        else {
+            card = null
+            supportFragmentManager.beginTransaction().replace(R.id.courseFragment, TheorCardFragment()).commit()
+        }
+        textView.text = card?.title ?: "Конец"
     }
 }

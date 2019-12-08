@@ -9,11 +9,13 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.pumplife.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="Курсы"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_courseInfoFragment"
-            app:destination="@id/courseInfoFragment" />
+            app:destination="@id/courseInfoFragment"
+            app:popUpTo="@+id/navigation_my_courses"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -22,7 +24,9 @@
         android:label="@string/title_dashboard">
         <action
             android:id="@+id/action_navigation_my_courses_to_courseInfoFragment"
-            app:destination="@id/courseInfoFragment" />
+            app:destination="@id/courseInfoFragment"
+            app:popUpTo="@+id/navigation_my_courses"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -33,5 +37,5 @@
     <fragment
         android:id="@+id/courseInfoFragment"
         android:name="com.example.pumplife.ui.home.CourseInfoFragment"
-        android:label="Курс" />
+        android:label="Информация" />
 </navigation>
