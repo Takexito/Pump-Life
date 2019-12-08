@@ -33,5 +33,5 @@
     <fragment
         android:id="@+id/courseInfoFragment"
         android:name="com.example.pumplife.ui.home.CourseInfoFragment"
-        android:label="CourseInfoFragment" />
+        android:label="Курс" />
 </navigation>
