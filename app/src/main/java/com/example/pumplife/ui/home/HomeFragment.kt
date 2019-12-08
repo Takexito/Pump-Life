@@ -4,28 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.adapters.CoursesBlockAdapter
-
-import com.example.pumplife.adapters.InfoPagerAdapter
-import com.example.pumplife.adapters.ThemesAdapter
 import com.example.pumplife.controller.CourseManager
-import com.example.pumplife.factories.CourseBlockDataFactory
-import com.example.pumplife.factories.CourseThemeDataFactory
-import kotlinx.android.synthetic.main.fragment_course_info.*
-
 import com.example.pumplife.controller.CoursesDB
 
 
 class HomeFragment : Fragment() {
 
-     lateinit var coursesBlockRecyclerView: RecyclerView
-     lateinit var coursesCardView: CardView
+    lateinit var coursesBlockRecyclerView: RecyclerView
+    lateinit var coursesCardView: CardView
 
 
     override fun onCreateView(
@@ -39,22 +31,16 @@ class HomeFragment : Fragment() {
         coursesBlockRecyclerView = root.findViewById(R.id.recyclerView_course_block)
         coursesCardView = view.findViewById(R.id.course_card_view)
 
-        CoursesDB.init(this)
+        CoursesDB.init()
         CourseManager.context = this
         return root
     }
 
-
-    fun updateAdapter(){
-        coursesBlockRecyclerView.adapter?.notifyDataSetChanged()
-    }
-
-    fun createAdapter(){
+    fun createAdapter() {
         CourseManager.clear()
         coursesBlockRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
-            adapter = CoursesBlockAdapter() //CoursesBlockAdapter(arrayListOf(CourseBlock(0, Themes.FINANCE, DataBase.data)))
-
+            adapter = CoursesBlockAdapter()
         }
 
     }

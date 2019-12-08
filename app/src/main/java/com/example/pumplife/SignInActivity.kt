@@ -19,7 +19,7 @@ class SignInActivity : AppCompatActivity() {
 
         val user = mAuth.currentUser
 
-        if (user !== null) {
+        if (user != null) {
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             Log.d("USER", "Запрос данных")
@@ -40,6 +40,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnSuccessListener {
                         val intent = Intent(this, MainActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        UsersDB.getUserData()
                         startActivity(intent)
                     }
 
@@ -51,7 +52,6 @@ class SignInActivity : AppCompatActivity() {
         }
 
         stop_button.setOnClickListener {
-            //Выход из Activity
             finish()
         }
 

@@ -12,7 +12,7 @@ import com.example.pumplife.model.CourseBlock
 import com.example.pumplife.model.Themes
 
 
-class CoursesBlockAdapter(): RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {
+class CoursesBlockAdapter: RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
@@ -24,7 +24,7 @@ class CoursesBlockAdapter(): RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlo
     override fun getItemCount(): Int = CourseManager.coursesBlockList.size
 
     override fun onBindViewHolder(holder: CoursesBlockHolder, position: Int) {
-        val courseBlock = CourseManager.coursesBlockList[position]//courseBlockList[position]
+        val courseBlock = CourseManager.coursesBlockList[position]
         holder.courseBlockTitleTextView.text = courseBlock.theme.name
         holder.courseView.apply {
             layoutManager = LinearLayoutManager(holder.courseView.context, RecyclerView.HORIZONTAL, false)

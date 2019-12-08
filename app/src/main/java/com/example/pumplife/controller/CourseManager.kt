@@ -10,7 +10,6 @@ object CourseManager {
     var startList: ArrayList<Course> = arrayListOf()
     lateinit var user: User
     lateinit var currCourse: Course
-    var isFirst = true
     var context: HomeFragment? = null
 
     fun setCourseBlockList(list: ArrayList<CourseBlock>) {
@@ -70,9 +69,7 @@ object CourseManager {
 
     fun updateAdapter() {
         if (context == null) return
-        if (isFirst) {
             context!!.createAdapter()
-        } else
-            context!!.updateAdapter()
+
     }
 }

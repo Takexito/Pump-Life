@@ -32,12 +32,14 @@ class TheorCardFragment: Fragment() {
             theorTextView.text ="Вы прошли курс!"
             theorNextButton.text = "Закончить"
             theorNextButton.setOnClickListener{
+                UsersDB.saveUser()
                 activity.close()
             }
         }
         else{
             theorTextView.text = activity.card?.body ?: "Вы прошли курс!"
             theorNextButton.setOnClickListener{
+                UsersDB.saveUser()
                 activity.next()
             }
         }

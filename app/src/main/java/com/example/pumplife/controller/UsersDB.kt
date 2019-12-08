@@ -8,29 +8,22 @@ import com.google.firebase.database.*
 
 object UsersDB {
     var mAuth = FirebaseAuth.getInstance()
-    val database = FirebaseDatabase.getInstance()
-    val myRef = database.reference.child("Users")
-    var currUser = User(userData = arrayListOf())
+    private val database = FirebaseDatabase.getInstance()
+    private val myRef = database.reference.child("Users")
     lateinit var postListener: ValueEventListener
-    var isFirst = true
 
 
-    fun createUser(name: String,  email: String){
+    fun createUser(name: String, email: String) {
         val userId = mAuth.currentUser!!.uid
-        currUser = User(userId, name, email,"", arrayListOf())
+        CourseManager.user = User(userId, name, email, "", arrayListOf())
         saveUser()
     }
 
-    fun saveUser(){
-        myRef.child(currUser.id).setValue(currUser)
-//        myRef.child(user.id).child("id").setValue(user.id)
-//        myRef.child(user.id).child("name").setValue(user.name)
-//        myRef.child(user.id).child("email").setValue(user.email)
-//        myRef.child(user.id).child("image").setValue(user.image)
-//        myRef.child(user.id).child("userData").setValue(user.userData)
+    fun saveUser() {
+        myRef.child(CourseManager.user.id).setValue(CourseManager.user)
     }
 
-    fun getUserData(){
+    fun getUserData() {
         postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val listUser = arrayListOf<User>()
@@ -40,9 +33,8 @@ object UsersDB {
                     listUser.add(userModel)
                 }
 
-                currUser = listUser.find { it.id == mAuth.currentUser!!.uid }!!
-                setUser()
-                Log.d("USER", "Получены данные для пользователя ${currUser.name}")
+                CourseManager.user = listUser.find { it.id == mAuth.currentUser!!.uid }!!
+                Log.d("USER", "Получены данные для пользователя ${CourseManager.user.name}")
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -52,7 +44,4 @@ object UsersDB {
         myRef.addValueEventListener(postListener)
     }
 
-    fun setUser(){
-        CourseManager.user = currUser
-    }
 }

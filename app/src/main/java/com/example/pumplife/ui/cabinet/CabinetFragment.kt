@@ -65,7 +65,7 @@ class CabinetFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        user_name.text = UsersDB.currUser.name
+        user_name.text = CourseManager.user.name
         Log.d("USERNAME", CourseManager.user.name)
     }
 
