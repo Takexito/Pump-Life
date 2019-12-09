@@ -28,7 +28,7 @@ class ThemeListFragment: Fragment() {
         themeRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
             adapter =
-                ThemesAdapter(CourseThemeDataFactory.getThemes())
+                ThemesAdapter()
         }
 
         return  view

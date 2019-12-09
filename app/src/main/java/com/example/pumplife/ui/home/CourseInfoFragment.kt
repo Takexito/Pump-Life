@@ -38,5 +38,8 @@ class CourseInfoFragment: Fragment() {
     override fun onResume() {
         super.onResume()
         course_progressBar.progress = CourseManager.currCourse.percent()
+        val text = CourseManager.currCourse.title
+        titleView.text = text
+        activity!!.title = text
     }
 }

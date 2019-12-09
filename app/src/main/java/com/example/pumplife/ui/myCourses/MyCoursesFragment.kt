@@ -38,4 +38,6 @@ class MyCoursesFragment : Fragment() {
         CourseManager.clear()
         CourseManager.check()
     }
+
+
 }
