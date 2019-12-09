@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.MainActivity
 import com.example.pumplife.R
 import com.example.pumplife.controller.CourseManager
+import com.example.pumplife.model.Themes
+import kotlinx.android.synthetic.main.course_item.view.*
 
 class MyCoursesAdapter : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() {
 
@@ -27,6 +29,7 @@ class MyCoursesAdapter : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() 
     private fun bind(holder: CoursesHolder, position: Int) {
         val course = CourseManager.startList[position]
         holder.titleTextView.text = course.title
+        setImage(course.theme, holder)
         holder.itemView.setOnClickListener {
             CourseManager.currCourse = course
             (contexxt as MainActivity).navController.navigate(R.id.courseInfoFragment)
@@ -39,5 +42,12 @@ class MyCoursesAdapter : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() 
 
     override fun onBindViewHolder(holder: CoursesHolder, position: Int) {
         bind(holder, position)
+    }
+
+    private fun setImage(theme: Themes, holder: CoursesHolder){
+        if(theme == Themes.FINANCE) holder.itemView.imageView.setImageResource(R.drawable.fin)
+        if(theme == Themes.LIFE) holder.itemView.imageView.setImageResource(R.drawable.life)
+        if(theme == Themes.LIDER) holder.itemView.imageView.setImageResource(R.drawable.lid)
+
     }
 }

@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.pumplife.R
 import com.example.pumplife.adapters.InfoPagerAdapter
+import com.example.pumplife.adapters.MyCoursesAdapter
 import com.example.pumplife.controller.CourseManager
+import com.example.pumplife.model.Themes
+import kotlinx.android.synthetic.main.course_item.view.*
 import kotlinx.android.synthetic.main.fragment_course_info.*
 
 class CourseInfoFragment: Fragment() {
@@ -30,8 +33,15 @@ class CourseInfoFragment: Fragment() {
         val text = CourseManager.currCourse.title
         titleView.text = text
         course_progressBar.progress = CourseManager.currCourse.percent()
-
+        setImage(CourseManager.currCourse.theme)
         activity!!.title = text
+
+    }
+
+    private fun setImage(theme: Themes){
+        if(theme == Themes.FINANCE) imageView2.setImageResource(R.drawable.fin)
+        if(theme == Themes.LIFE) imageView2.setImageResource(R.drawable.life)
+        if(theme == Themes.LIDER) imageView2.setImageResource(R.drawable.lid)
 
     }
 
@@ -40,6 +50,7 @@ class CourseInfoFragment: Fragment() {
         course_progressBar.progress = CourseManager.currCourse.percent()
         val text = CourseManager.currCourse.title
         titleView.text = text
+        setImage(CourseManager.currCourse.theme)
         activity!!.title = text
     }
 }
