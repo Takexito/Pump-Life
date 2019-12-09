@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pumplife.MainActivity
 import com.example.pumplife.R
-import com.example.pumplife.controller.CourseManager
+import com.example.pumplife.controller.AppController
 import com.example.pumplife.model.Themes
+import com.example.pumplife.ui.activity.MainActivity
 import kotlinx.android.synthetic.main.course_item.view.*
 
 class PassedCoursesAdapter : RecyclerView.Adapter<PassedCoursesAdapter.CoursesHolder>() {
@@ -23,15 +23,15 @@ class PassedCoursesAdapter : RecyclerView.Adapter<PassedCoursesAdapter.CoursesHo
         return CoursesHolder(view)
     }
 
-    override fun getItemCount(): Int = CourseManager.completeList.size
+    override fun getItemCount(): Int = AppController.completeList.size
 
 
     private fun bind(holder: CoursesHolder, position: Int) {
-        val course = CourseManager.completeList[position]
+        val course = AppController.completeList[position]
         holder.titleTextView.text = course.title
         setImage(course.theme, holder)
         holder.itemView.setOnClickListener {
-            CourseManager.currCourse = course
+            AppController.currCourse = course
             (contexxt as MainActivity).navController.navigate(R.id.courseInfoFragment)
         }
     }
@@ -44,10 +44,10 @@ class PassedCoursesAdapter : RecyclerView.Adapter<PassedCoursesAdapter.CoursesHo
         bind(holder, position)
     }
 
-    private fun setImage(theme: Themes, holder: CoursesHolder){
-        if(theme == Themes.FINANCE) holder.itemView.imageView.setImageResource(R.drawable.fin)
-        if(theme == Themes.LIFE) holder.itemView.imageView.setImageResource(R.drawable.life)
-        if(theme == Themes.LEADER) holder.itemView.imageView.setImageResource(R.drawable.lid)
+    private fun setImage(theme: Themes, holder: CoursesHolder) {
+        if (theme == Themes.FINANCE) holder.itemView.imageView.setImageResource(R.drawable.fin)
+        if (theme == Themes.LIFE) holder.itemView.imageView.setImageResource(R.drawable.life)
+        if (theme == Themes.LEADER) holder.itemView.imageView.setImageResource(R.drawable.lid)
 
     }
 }

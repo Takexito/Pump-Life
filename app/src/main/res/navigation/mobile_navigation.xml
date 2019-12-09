@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.pumplife.ui.home.HomeFragment"
+        android:name="com.example.pumplife.ui.fragment.home.HomeFragment"
         android:label="Курсы"
         tools:layout="@layout/fragment_home" >
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_my_courses"
-        android:name="com.example.pumplife.ui.myCourses.MyCoursesFragment"
+        android:name="com.example.pumplife.ui.fragment.mycourses.MyCoursesFragment"
         android:label="@string/title_dashboard">
         <action
             android:id="@+id/action_navigation_my_courses_to_courseInfoFragment"
@@ -31,11 +31,11 @@
 
     <fragment
         android:id="@+id/navigation_cabinet"
-        android:name="com.example.pumplife.ui.cabinet.CabinetFragment"
+        android:name="com.example.pumplife.ui.fragment.cabinet.CabinetFragment"
         android:label="@string/title_cabinet"
         tools:layout="@layout/fragment_cabinet" />
     <fragment
         android:id="@+id/courseInfoFragment"
-        android:name="com.example.pumplife.ui.home.CourseInfoFragment"
+        android:name="com.example.pumplife.ui.fragment.info.CourseInfoFragment"
         android:label="Информация" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.pumplife.ui.cabinet
+package com.example.pumplife.ui.fragment.cabinet
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,14 +12,18 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_change_password.*
 import kotlinx.android.synthetic.main.fragment_change_password.view.*
 
-class ChangePasswordFragment: DialogFragment() {
+class ChangePasswordFragment : DialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(com.example.pumplife.R.layout.fragment_change_password, container, false)
+        val view = inflater.inflate(
+            com.example.pumplife.R.layout.fragment_change_password,
+            container,
+            false
+        )
 
         val mAuth = FirebaseAuth.getInstance()
         val mDatabase = FirebaseDatabase.getInstance()
@@ -39,7 +43,11 @@ class ChangePasswordFragment: DialogFragment() {
                     if (newPass == confPass) {
                         user.updatePassword(newPass)
                             .addOnSuccessListener {
-                                Toast.makeText(context, "Пароль успешно изменен", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    context,
+                                    "Пароль успешно изменен",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                                 dismiss()
                             }
                             .addOnFailureListener {

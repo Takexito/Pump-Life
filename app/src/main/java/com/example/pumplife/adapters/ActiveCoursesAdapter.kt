@@ -6,14 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pumplife.MainActivity
 import com.example.pumplife.R
-import com.example.pumplife.controller.CourseManager
+import com.example.pumplife.controller.AppController
 import com.example.pumplife.model.Course
 import com.example.pumplife.model.Themes
+import com.example.pumplife.ui.activity.MainActivity
 import kotlinx.android.synthetic.main.course_item.view.*
 
-class CoursesAdapter(var theme: Themes): RecyclerView.Adapter<CoursesAdapter.CoursesHolder>() {
+class ActiveCoursesAdapter(var theme: Themes) :
+    RecyclerView.Adapter<ActiveCoursesAdapter.CoursesHolder>() {
 
     lateinit var context: Context
 
@@ -24,32 +25,33 @@ class CoursesAdapter(var theme: Themes): RecyclerView.Adapter<CoursesAdapter.Cou
         return CoursesHolder(view)
     }
 
-    override fun getItemCount(): Int = CourseManager.getCourseBlockSize(theme)
+    override fun getItemCount(): Int = AppController.getCourseBlockSize(theme)
 
     override fun onBindViewHolder(holder: CoursesHolder, position: Int) {
         bind(holder, position)
     }
 
-    private fun bind(holder: CoursesHolder, position: Int){
-        val course = CourseManager.getCourseByIndex(theme, position) ?: Course() //courseList[position]
-        CourseManager.checkUserData(course)
-        CourseManager.listCreate(course)
+    private fun bind(holder: CoursesHolder, position: Int) {
+        val course =
+            AppController.getCourseByIndex(theme, position) ?: Course() //courseList[position]
+        AppController.checkUserData(course)
+        AppController.listCreate(course)
         holder.titleTextView.text = course.title
         setImage(holder)
-        holder.itemView.setOnClickListener{
-            CourseManager.currCourse = course
+        holder.itemView.setOnClickListener {
+            AppController.currCourse = course
             (context as MainActivity).navController.navigate(R.id.action_navigation_home_to_courseInfoFragment)//, Bundle(1).putString("title", course.title) )
         }
     }
 
-    inner class CoursesHolder(view: View): RecyclerView.ViewHolder(view){
+    inner class CoursesHolder(view: View) : RecyclerView.ViewHolder(view) {
         val titleTextView = itemView.findViewById<TextView>(R.id.course_name)
     }
 
-    private fun setImage(holder: CoursesHolder){
-        if(theme == Themes.FINANCE) holder.itemView.imageView.setImageResource(R.drawable.fin)
-        if(theme == Themes.LIFE) holder.itemView.imageView.setImageResource(R.drawable.life)
-        if(theme == Themes.LEADER) holder.itemView.imageView.setImageResource(R.drawable.lid)
+    private fun setImage(holder: CoursesHolder) {
+        if (theme == Themes.FINANCE) holder.itemView.imageView.setImageResource(R.drawable.fin)
+        if (theme == Themes.LIFE) holder.itemView.imageView.setImageResource(R.drawable.life)
+        if (theme == Themes.LEADER) holder.itemView.imageView.setImageResource(R.drawable.lid)
 
     }
 }

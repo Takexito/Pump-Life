@@ -2,7 +2,6 @@ package com.example.pumplife.controller
 
 import android.util.Log
 import com.example.pumplife.model.CourseBlock
-import com.example.pumplife.ui.home.HomeFragment
 import com.google.firebase.database.*
 
 
@@ -25,14 +24,13 @@ object CoursesDB {
         myRef.addValueEventListener(postListener)
     }
 
-    fun update(dataSnapshot: DataSnapshot){
-        //Get Post object and use the values to update the UI
+    fun update(dataSnapshot: DataSnapshot) {
         val genericTypeIndicator: GenericTypeIndicator<ArrayList<CourseBlock>> =
             object :
                 GenericTypeIndicator<ArrayList<CourseBlock>>() {}
         data = dataSnapshot.getValue(genericTypeIndicator)!!
-        CourseManager.setCourseBlockList(data)
-        CourseManager.updateAdapter()
+        AppController.setCourseBlockList(data)
+        AppController.updateAdapter()
     }
 
 

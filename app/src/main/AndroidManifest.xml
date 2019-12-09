@@ -15,16 +15,16 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
-        <activity android:name=".SignInActivity" android:screenOrientation="locked">
+        <activity android:name=".ui.activity.SignInActivity" android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity" android:screenOrientation="locked"/>
-        <activity android:name=".MainActivity" android:label="@string/app_name" android:screenOrientation="locked"/>
-        <activity android:name=".CourseActivity" android:screenOrientation="locked"/>
+        <activity android:name=".ui.activity.SignUpActivity" android:screenOrientation="locked"/>
+        <activity android:name=".ui.activity.MainActivity" android:label="@string/app_name" android:screenOrientation="locked"/>
+        <activity android:name=".ui.activity.CourseActivity" android:screenOrientation="locked"/>
     </application>
 
 </manifest>

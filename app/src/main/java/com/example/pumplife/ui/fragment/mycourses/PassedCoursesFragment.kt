@@ -1,4 +1,4 @@
-package com.example.pumplife.ui.myCourses
+package com.example.pumplife.ui.fragment.mycourses
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
-import com.example.pumplife.adapters.MyCoursesAdapter
+import com.example.pumplife.adapters.PassedCoursesAdapter
 
-class ActiveCoursesFragment: Fragment() {
+class PassedCoursesFragment : Fragment() {
 
-    lateinit var activeCoursesBlockRecyclerView: RecyclerView
+    lateinit var passedCoursesBlockRecyclerView: RecyclerView
 
 
     override fun onCreateView(
@@ -20,19 +20,20 @@ class ActiveCoursesFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_active_courses, container, false)
+        val root = inflater.inflate(R.layout.fragment_passed_courses, container, false)
 
-        activeCoursesBlockRecyclerView = root.findViewById(R.id.active_courses_recycler_view)
+        passedCoursesBlockRecyclerView = root.findViewById(R.id.passed_courses_recycler_view)
 
         setRecyclerViews()
 
         return root
     }
 
-    fun setRecyclerViews(){
-        activeCoursesBlockRecyclerView.apply {
+    private fun setRecyclerViews() {
+
+        passedCoursesBlockRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
-            adapter = MyCoursesAdapter()
+            adapter = PassedCoursesAdapter()
         }
 
     }

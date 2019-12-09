@@ -1,4 +1,4 @@
-package com.example.pumplife.ui.courses
+package com.example.pumplife.ui.fragment.cards
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.pumplife.R
 
-class TestCardFragment: Fragment() {
+class TestCardFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

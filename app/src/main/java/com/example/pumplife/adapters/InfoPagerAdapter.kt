@@ -3,10 +3,11 @@ package com.example.pumplife.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.pumplife.ui.home.CourseDescriptionFragment
-import com.example.pumplife.ui.home.ThemeListFragment
+import com.example.pumplife.ui.fragment.info.CourseDescriptionFragment
+import com.example.pumplife.ui.fragment.info.ThemeListFragment
 
-class InfoPagerAdapter(manager: FragmentManager): FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+class InfoPagerAdapter(manager: FragmentManager) :
+    FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     override fun getCount(): Int {
         return 2
     }
@@ -14,8 +15,12 @@ class InfoPagerAdapter(manager: FragmentManager): FragmentPagerAdapter(manager, 
     override fun getItem(position: Int): Fragment {
 
         return when (position) {
-            0 -> {CourseDescriptionFragment()}
-           else -> {ThemeListFragment()}
+            0 -> {
+                CourseDescriptionFragment()
+            }
+            else -> {
+                ThemeListFragment()
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.pumplife.ui.home
+package com.example.pumplife.ui.fragment.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.adapters.CoursesBlockAdapter
-import com.example.pumplife.controller.CourseManager
+import com.example.pumplife.controller.AppController
 import com.example.pumplife.controller.CoursesDB
 
 
@@ -32,12 +32,12 @@ class HomeFragment : Fragment() {
         coursesCardView = view.findViewById(R.id.course_card_view)
 
         CoursesDB.init()
-        CourseManager.context = this
+        AppController.context = this
         return root
     }
 
     fun createAdapter() {
-        CourseManager.clear()
+        AppController.clear()
         coursesBlockRecyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
             adapter = CoursesBlockAdapter()

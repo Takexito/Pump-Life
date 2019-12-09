@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#151518"
-    tools:context=".CourseActivity">
+    tools:context=".ui.activity.CourseActivity">
 
     <FrameLayout
         android:id="@+id/courseFragment"
