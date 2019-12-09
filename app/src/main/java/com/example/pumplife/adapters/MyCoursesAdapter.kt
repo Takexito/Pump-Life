@@ -47,7 +47,7 @@ class MyCoursesAdapter : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() 
     private fun setImage(theme: Themes, holder: CoursesHolder){
         if(theme == Themes.FINANCE) holder.itemView.imageView.setImageResource(R.drawable.fin)
         if(theme == Themes.LIFE) holder.itemView.imageView.setImageResource(R.drawable.life)
-        if(theme == Themes.LIDER) holder.itemView.imageView.setImageResource(R.drawable.lid)
+        if(theme == Themes.LEADER) holder.itemView.imageView.setImageResource(R.drawable.lid)
 
     }
 }

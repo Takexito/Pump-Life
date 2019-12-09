@@ -4,5 +4,5 @@ package com.example.pumplife.model
 enum class Themes {
     FINANCE,
     LIFE,
-    LIDER
+    LEADER
 }

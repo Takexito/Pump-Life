@@ -39,7 +39,7 @@ class CourseInfoFragment: Fragment() {
     private fun setImage(theme: Themes){
         if(theme == Themes.FINANCE) imageView2.setImageResource(R.drawable.fin)
         if(theme == Themes.LIFE) imageView2.setImageResource(R.drawable.life)
-        if(theme == Themes.LIDER) imageView2.setImageResource(R.drawable.lid)
+        if(theme == Themes.LEADER) imageView2.setImageResource(R.drawable.lid)
 
     }
 
