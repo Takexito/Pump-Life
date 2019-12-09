@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.adapters.MyCoursesAdapter
-import com.example.pumplife.controller.CourseManager
 
 class ActiveCoursesFragment: Fragment() {
 

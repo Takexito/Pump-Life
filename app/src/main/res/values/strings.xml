@@ -4,8 +4,27 @@
     <string name="title_dashboard">Мои курсы</string>
     <string name="title_cabinet">Личный кабинет</string>
     <string name="courses">Курсы</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter">Войти</string>
+    <string name="register">Зарегестрироваться</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Пароль</string>
+    <string name="name">Имя</string>
+    <string name="conf_pass">Повторите пароль</string>
+    <string name="main_title">Main title</string>
+    <string name="title">Title</string>
+    <string name="theme">Theme</string>
+    <string name="change_avatar">Сменить аватар</string>
+    <string name="change_pass">Сменить пароль</string>
+    <string name="exit">Выйти</string>
+    <string name="old_pass">Старый пароль</string>
+    <string name="new_pass">Новый пароль</string>
+    <string name="description">Description</string>
+    <string name="start_course">Начать курс</string>
+    <string name="designation">НАЗВАНИЕ</string>
+    <string name="about">О курсе</string>
+    <string name="modules">Модули</string>
+    <string name="active_courses">Активные</string>
+    <string name="completed_courses">Пройденные</string>
+    <string name="next">Вперед</string>
 
 </resources>

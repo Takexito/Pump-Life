@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.adapters.ThemesAdapter
-import com.example.pumplife.factories.CourseThemeDataFactory
 
 
 class ThemeListFragment: Fragment() {

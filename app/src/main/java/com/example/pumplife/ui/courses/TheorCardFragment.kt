@@ -9,7 +9,6 @@ import com.example.pumplife.CourseActivity
 import com.example.pumplife.R
 import com.example.pumplife.controller.CourseManager
 import com.example.pumplife.controller.UsersDB
-import kotlinx.android.synthetic.main.fragment_test_card.*
 import kotlinx.android.synthetic.main.fragment_theor_card.*
 
 class TheorCardFragment: Fragment() {

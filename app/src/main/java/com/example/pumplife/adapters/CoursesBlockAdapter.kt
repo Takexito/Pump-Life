@@ -8,9 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
 import com.example.pumplife.controller.CourseManager
-import com.example.pumplife.model.CourseBlock
-import com.example.pumplife.model.Themes
-
 
 class CoursesBlockAdapter: RecyclerView.Adapter<CoursesBlockAdapter.CoursesBlockHolder>() {
 

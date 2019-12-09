@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_avatar" />
+        app:srcCompat="@drawable/user_avatar"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/user_name"
@@ -26,8 +27,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="2"
         android:gravity="center"
-        android:text="username"
-
+        android:text="@string/name"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,26 +35,12 @@
         app:layout_constraintTop_toBottomOf="@+id/user_avatar" />
 
     <Button
-        android:id="@+id/change_avatar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/ic_button_bg"
-        android:text="Сменить аватар"
-        android:textColor="#FFFEFE"
-        android:textSize="18sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/change_password_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/change_password_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:background="@drawable/ic_button_bg"
-        android:text="Сменить пароль"
+        android:text="@string/change_pass"
         android:textColor="#FFFEFE"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/change_user_button"
@@ -67,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:background="@drawable/ic_button_bg"
-        android:text="Выйти"
+        android:text="@string/exit"
         android:textColor="#FFFEFE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

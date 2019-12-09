@@ -1,31 +1,25 @@
 package com.example.pumplife.adapters
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.MainActivity
 import com.example.pumplife.R
 import com.example.pumplife.controller.CourseManager
 import com.example.pumplife.model.Course
 import com.example.pumplife.model.Themes
-import com.example.pumplife.ui.home.CourseInfoFragment
-import com.example.pumplife.ui.home.HomeFragment
 import kotlinx.android.synthetic.main.course_item.view.*
 
 class CoursesAdapter(var theme: Themes): RecyclerView.Adapter<CoursesAdapter.CoursesHolder>() {
 
-    lateinit var contexxt: Context
+    lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoursesHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.course_item, parent, false)
-        contexxt = parent.context
+        context = parent.context
 
         return CoursesHolder(view)
     }
@@ -44,7 +38,7 @@ class CoursesAdapter(var theme: Themes): RecyclerView.Adapter<CoursesAdapter.Cou
         setImage(holder)
         holder.itemView.setOnClickListener{
             CourseManager.currCourse = course
-            (contexxt as MainActivity).navController.navigate(R.id.action_navigation_home_to_courseInfoFragment)//, Bundle(1).putString("title", course.title) )
+            (context as MainActivity).navController.navigate(R.id.action_navigation_home_to_courseInfoFragment)//, Bundle(1).putString("title", course.title) )
         }
     }
 

@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.pumplife.SignInActivity
 import com.example.pumplife.controller.CourseManager
-import com.example.pumplife.controller.UsersDB
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -18,8 +17,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_cabinet.*
 import kotlinx.android.synthetic.main.fragment_cabinet.view.*
-
-
 
 class CabinetFragment: Fragment() {
 
@@ -45,11 +42,6 @@ class CabinetFragment: Fragment() {
 
             override fun onCancelled(error: DatabaseError) {}
         })
-
-        view.change_avatar_button.setOnClickListener{
-            Toast.makeText(activity, "Change avatar", Toast.LENGTH_LONG).show()
-
-        }
 
         view.change_password_button.setOnClickListener{
             ChangePasswordFragment().show(childFragmentManager, "change_password_dialog")

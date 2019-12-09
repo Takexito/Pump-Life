@@ -14,11 +14,11 @@ import kotlinx.android.synthetic.main.course_item.view.*
 
 class MyCoursesAdapter : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() {
 
-    lateinit var contexxt: Context
+    lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoursesHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.course_item, parent, false)
-        contexxt = parent.context
+        context = parent.context
 
         return CoursesHolder(view)
     }
@@ -32,7 +32,7 @@ class MyCoursesAdapter : RecyclerView.Adapter<MyCoursesAdapter.CoursesHolder>() 
         setImage(course.theme, holder)
         holder.itemView.setOnClickListener {
             CourseManager.currCourse = course
-            (contexxt as MainActivity).navController.navigate(R.id.courseInfoFragment)
+            (context as MainActivity).navController.navigate(R.id.courseInfoFragment)
         }
     }
 
