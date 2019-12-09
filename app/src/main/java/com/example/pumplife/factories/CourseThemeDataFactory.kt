@@ -1,8 +1,6 @@
 package com.example.pumplife.factories
 
-
 import com.example.pumplife.model.CourseThemes
-import com.example.pumplife.model.Themes
 
 
 object CourseThemeDataFactory {

@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Theme"
+            android:text="@string/theme"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="18sp" />
     </androidx.cardview.widget.CardView>

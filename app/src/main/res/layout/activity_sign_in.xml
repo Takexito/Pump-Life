@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/sign_in_button"
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@drawable/ic_button_bg"
-        android:text="Войти"
+        android:text="@string/enter"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/go_to_sign_up_button"
@@ -35,8 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
-        android:background="#151518"
-        android:text="Зарегестрироваться"
+        android:background="#00000000"
+        android:text="@string/register"
+
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,7 +55,7 @@
         android:backgroundTint="@color/colorAccent"
         android:ellipsize="end"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="@string/e_mail"
         android:inputType="textEmailAddress"
         android:maxLines="1"
         android:shadowColor="@color/common_google_signin_btn_text_dark_focused"
@@ -64,7 +66,8 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/edit_pass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/edit_pass"
@@ -76,7 +79,7 @@
         android:backgroundTint="@color/colorAccent"
         android:ellipsize="end"
         android:ems="10"
-        android:hint="Пароль"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:maxLines="1"
         android:shadowColor="#80000000"
@@ -88,7 +91,8 @@
         app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:importantForAutofill="no" />
 
     <ImageButton
         android:id="@+id/delete_password_button"
@@ -100,7 +104,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edit_pass"
         app:layout_constraintTop_toTopOf="@+id/edit_pass"
-        app:srcCompat="@drawable/ic_cross" />
+        app:srcCompat="@drawable/ic_cross"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/delete_email_button"
@@ -112,6 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edit_email"
         app:layout_constraintTop_toTopOf="@+id/edit_email"
-        app:srcCompat="@drawable/ic_cross" />
+        app:srcCompat="@drawable/ic_cross"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

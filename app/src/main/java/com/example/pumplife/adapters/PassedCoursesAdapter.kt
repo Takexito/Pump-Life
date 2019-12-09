@@ -12,7 +12,7 @@ import com.example.pumplife.controller.CourseManager
 import com.example.pumplife.model.Themes
 import kotlinx.android.synthetic.main.course_item.view.*
 
-class PassedCoursesAdapter() : RecyclerView.Adapter<PassedCoursesAdapter.CoursesHolder>() {
+class PassedCoursesAdapter : RecyclerView.Adapter<PassedCoursesAdapter.CoursesHolder>() {
 
     lateinit var contexxt: Context
 

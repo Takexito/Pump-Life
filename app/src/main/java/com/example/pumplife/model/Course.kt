@@ -6,7 +6,7 @@ class Course (
     val title: String = "title",
     val description: String = "Description of this course",
     val image: String = "https://sun9-60.userapi.com/c858032/v858032528/10d752/9OdTprLe5EY.jpg",
-    val cardList: ArrayList<TheorCard> = arrayListOf(TheorCard("Card Title", "Lesson number 1. Just do it!", false), TheorCard("Card Title2", "Lesson number 2. Just do it!", false)),
+    val cardList: ArrayList<TheoryCard> = arrayListOf(TheoryCard("Card Title", "Lesson number 1. Just do it!", false), TheoryCard("Card Title2", "Lesson number 2. Just do it!", false)),
     val testCard: TestCard = TestCard(),
     var testComplete: Boolean = false,
     val theme: Themes = Themes.FINANCE,

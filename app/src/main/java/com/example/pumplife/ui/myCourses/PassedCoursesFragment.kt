@@ -8,12 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pumplife.R
-import com.example.pumplife.adapters.CoursesAdapter
-import com.example.pumplife.adapters.CoursesBlockAdapter
 import com.example.pumplife.adapters.PassedCoursesAdapter
-import com.example.pumplife.factories.CourseBlockDataFactory
-import com.example.pumplife.model.CourseBlock
-import com.example.pumplife.model.Themes
 
 class PassedCoursesFragment: Fragment() {
 

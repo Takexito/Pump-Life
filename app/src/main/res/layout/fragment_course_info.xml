@@ -28,7 +28,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/fin" />
+                    app:srcCompat="@drawable/fin"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/titleView"
@@ -36,7 +37,7 @@
                     android:layout_height="150dp"
                     android:background="@color/common_google_signin_btn_text_light_default"
                     android:gravity="center"
-                    android:text="НАЗВАНИЕ "
+                    android:text="@string/designation"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
             </RelativeLayout>
@@ -59,12 +60,12 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="О курсе" />
+                    android:text="@string/about" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Модули" />
+                    android:text="@string/modules" />
 
             </com.google.android.material.tabs.TabLayout>
 

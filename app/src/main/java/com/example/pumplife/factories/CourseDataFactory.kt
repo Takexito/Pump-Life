@@ -1,9 +1,6 @@
 package com.example.pumplife.factories
 
-import com.example.pumplife.model.Card
 import com.example.pumplife.model.Course
-import com.example.pumplife.model.Themes
-import com.example.pumplife.model.TheorCard
 
 object CourseDataFactory {
 

@@ -3,14 +3,14 @@ package com.example.pumplife
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.pumplife.controller.CourseManager
-import com.example.pumplife.model.TheorCard
+import com.example.pumplife.model.TheoryCard
 import com.example.pumplife.ui.courses.TheorCardFragment
 import kotlinx.android.synthetic.main.activity_course.*
 
 class CourseActivity : AppCompatActivity() {
 
     val course = CourseManager.currCourse
-    var card: TheorCard? = null
+    var card: TheoryCard? = null
     var cardID = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

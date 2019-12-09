@@ -5,17 +5,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pumplife.controller.UsersDB
-import com.example.pumplife.model.UserData
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
 
     private var mAuth = UsersDB.mAuth
-    private var mDatabase = FirebaseDatabase.getInstance()
-    private var mRef = mDatabase.reference.child("Users")
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,10 +41,6 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Все поля должны быть заполнены", Toast.LENGTH_SHORT).show()
             } else Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_SHORT).show()
         }
-
-//        stop_button.setOnClickListener {
-//            finish()
-//        }
 
         delete_email_button.setOnClickListener {
             edit_email.text = null

@@ -7,6 +7,4 @@ class User (
     val email: String = "Takexito@gmail.com",
     val image: String = "",
     val userData: ArrayList<UserData> = arrayListOf()//list
-){
-
-}
+)
